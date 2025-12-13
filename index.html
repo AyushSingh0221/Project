@@ -1,263 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ayush Kumar Singh | AI/ML Engineer Portfolio</title>
-
-  <!-- Inter font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-
-  <!-- Local CSS -->
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayush Kumar Singh | Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- animated background -->
-  <div class="animated-bg"></div>
 
-  <!-- NAV -->
-  <nav class="navbar" id="navbar">
-    <div class="container">
-      <div class="nav-content">
-        <a class="logo" onclick="scrollToId('home')">AKS<span style="color: var(--color-accent-light); font-size: 1.1em;">.</span></a>
+    <div class="animated-bg"></div>
 
-        <div class="nav-links hidden-md" id="desktop-links">
-          <button onclick="scrollToId('home')">Home</button>
-          <button onclick="scrollToId('about')">About</button>
-          <button onclick="scrollToId('skills')">Skills</button>
-          <button onclick="scrollToId('projects')">Projects</button>
-          <button onclick="scrollToId('achievements')">Achievements</button>
-          <button onclick="scrollToId('contact')">Contact</button>
-
-          <button id="theme-toggle" aria-label="Toggle theme" style="margin-left: 1rem; padding: 0.5rem; border-radius: 9999px; color: var(--color-accent-light);">
-            <svg id="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
-            <svg id="theme-icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
-          </button>
+    <nav class="navbar" id="navbar">
+        <div class="container nav-content">
+            <div class="logo">AKS</div>
+            <div class="hidden-md nav-links">
+                <button onclick="scrollToId('home')">Home</button>
+                <button onclick="scrollToId('about')">About</button>
+                <button onclick="scrollToId('skills')">Skills</button>
+                <button onclick="scrollToId('projects')">Projects</button>
+                <button onclick="scrollToId('achievements')">Achievements</button>
+                <button onclick="scrollToId('contact')">Contact</button>
+                
+                <button id="theme-toggle" class="btn-secondary" style="padding: 0.5rem 1rem;">
+                    <svg id="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+                    <svg id="theme-icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+                </button>
+            </div>
+            
+            <button class="menu-icon show-md" onclick="toggleMenu()">
+                <svg id="menu-icon-open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: block;"><line x1="3" x2="21" y1="12" y2="12"/><line x1="3" x2="21" y1="6" y2="6"/><line x1="3" x2="21" y1="18" y2="18"/></svg>
+                <svg id="menu-icon-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><line x1="18" x2="6" y1="6" y2="18"/><line x1="6" x2="18" y1="6" y2="18"/></svg>
+            </button>
         </div>
-
-        <button class="menu-icon show-md" onclick="toggleMenu()" aria-label="Open menu">
-          <svg id="menu-icon-open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
-          <svg id="menu-icon-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x" style="display:none;"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-        </button>
-      </div>
-
-      <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
-        <button onclick="scrollToId('home')">Home</button>
-        <button onclick="scrollToId('about')">About</button>
-        <button onclick="scrollToId('skills')">Skills</button>
-        <button onclick="scrollToId('projects')">Projects</button>
-        <button onclick="scrollToId('achievements')">Achievements</button>
-        <button onclick="scrollToId('contact')">Contact</button>
-      </div>
-    </div>
-  </nav>
-
-  <!-- HERO -->
-  <section id="home" class="hero-section">
-    <div id="hero-parallax-target" style="position:absolute; inset:0; z-index:-20;">
-      <div class="hero-blob-1" id="blob-1"></div>
-      <div class="hero-blob-2" id="blob-2"></div>
-    </div>
-
-    <div class="container">
-      <div style="display:inline-block; padding:0.5rem 1rem; border-radius:9999px; border:1px solid var(--color-border); font-size:0.875rem; font-weight:500; margin-bottom:1.5rem; color:var(--color-accent-light); background-color:var(--color-bg-light); transition: all 0.3s;">
-        👋 Welcome to my portfolio
-      </div>
-
-      <h1 class="hero-title">I am <span class="hero-name">Ayush Kumar Singh</span></h1>
-
-      <div class="hero-role-container">
-        <span id="typewriter-text" class="hero-role-text"></span>
-        <span id="hero-cursor" class="hero-cursor">|</span>
-      </div>
-
-      <p class="hero-bio">Aspiring AI/ML Engineer & Full Stack Developer tailored to solve real-world problems through data and code. I believe in continuous learning, innovation, and collaboration.</p>
-
-      <div class="hero-actions">
-        <a href="#projects" class="btn-primary" onclick="scrollToId('projects')">
-          View Work
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:0.5rem;"><path d="m6 9 6 6 6-6"/></svg>
-        </a>
-        <a href="#contact" class="btn-secondary" onclick="scrollToId('contact')">
-          Contact Me
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:0.5rem;"><path d="m22 2-7 20-4-9-9-4 20-7Z"/><path d="M12 12 3 21"/></svg>
-        </a>
-      </div>
-
-      <div class="social-icons">
-        <a href="https://github.com/Ayush0221" target="_blank" rel="noreferrer" class="social-link">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22s-4 0-7 2c0 0-4-3-4-7 0-7 6-8 6-8s-2-2-4-5c0 0 2-4 5-3 3 0 4 3 4 3s2 1 3 1c1 0 2-1 3-1 0 0 3-1 3-3 0 0-2 2-4 2s-3 1-3 1-1 3-1 3-1 0-1 0-1 0-1 0-1-3-1-3z"/></svg>
-        </a>
-        <a href="https://www.linkedin.com/in/ayush-singh-52938a28b/" target="_blank" rel="noreferrer" class="social-link">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 0-6 6v7H6v-7a6 6 0 0 1 6-6h4z"/><rect x="2" y="3" width="4" height="4" rx="1"/></svg>
-        </a>
-        <a href="mailto:ayush022105@gmail.com" class="social-link">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6z"/><path d="m3 7 9 7 9-7"/></svg>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about" style="background-color: var(--color-bg-light);">
-    <div class="container">
-      <div class="section-header">
-        <h2>About Me</h2>
-        <div class="divider"></div>
-        <p>My journey and philosophy in technology</p>
-      </div>
-
-      <div class="about-grid">
-        <div class="about-card">
-          <h3>Who am I?</h3>
-          <p>I am an aspiring technology enthusiast with a strong interest in creating impactful digital solutions that address real-world challenges. I believe in the power of continuous learning, innovation, and collaboration to drive positive change. With a deep sense of social responsibility, I aim to use technology for awareness, inclusion, and community development.</p>
-
-          <div style="margin-bottom: 0.5rem; display: flex; align-items: center; color: var(--color-text-secondary);">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 0.75rem; color: var(--color-accent-main);"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-            Gorakhpur, Uttar Pradesh, India
-          </div>
-
-          <div style="display: flex; align-items: center; color: var(--color-text-secondary);">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 0.75rem; color: var(--color-accent-main);"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M8 7h8"/><path d="M8 11h8"/><path d="M8 15h8"/></svg>
-            B.E. CSE (AIML), Chandigarh University
-          </div>
+        <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+            <button onclick="scrollToId('home')">Home</button>
+            <button onclick="scrollToId('about')">About</button>
+            <button onclick="scrollToId('skills')">Skills</button>
+            <button onclick="scrollToId('projects')">Projects</button>
+            <button onclick="scrollToId('achievements')">Achievements</button>
+            <button onclick="scrollToId('contact')">Contact</button>
         </div>
+    </nav>
 
-        <div class="stat-grid">
-          <div class="stat-item">
-            <div>7.41</div>
-            <div>CGPA</div>
-            <div>Until 4th Sem</div>
-          </div>
-          <div class="stat-item">
-            <div>10+</div>
-            <div>Projects</div>
-            <div>Completed</div>
-          </div>
-          <div class="stat-item">
-            <div>Fresh</div>
-            <div>Experience</div>
-            <div>Open to Work</div>
-          </div>
-          <div class="stat-item">
-            <div>AI/ML</div>
-            <div>Focus</div>
-            <div>Specialization</div>
-          </div>
+    <section id="home" class="hero">
+        <div class="container">
+            <h1 class="hero-title">
+                Hi, I'm <span class="hero-name">Ayush Kumar Singh</span>
+            </h1>
+            <div class="hero-role-container">
+                <span class="hero-role-text" id="typewriter-text"></span>
+                <span class="hero-cursor" id="typewriter-cursor">|</span>
+            </div>
+            <p class="hero-bio">
+                Aspiring AI/ML Engineer and Full Stack Developer focused on building intelligent, impactful, and socially responsible digital solutions.
+            </p>
+            <div class="hero-actions">
+                <a href="#projects" class="btn-primary">View Projects</a>
+                <a href="#contact" class="btn-secondary">Get In Touch</a>
+            </div>
+            <div class="social-icons">
+                <a href="https://github.com/Ayush0221" target="_blank" class="social-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2C6.477 2 2 6.477 2 12c0 4.417 2.864 8.169 6.83 9.49.5.092.682-.217.682-.483 0-.237-.008-.867-.013-1.7-2.782.603-3.37-1.34-3.37-1.34-.454-1.157-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.004.07 1.531 1.032 1.531 1.032.892 1.528 2.341 1.087 2.91.83.091-.645.35-1.087.633-1.337-2.22-.253-4.555-1.11-4.555-4.943 0-1.09.39-1.984 1.03-2.675-.104-.252-.446-1.266.098-2.637 0 0 .84-.268 2.75 1.025A9.742 9.742 0 0 1 12 6.55c.85.006 1.7.12 2.5.352 1.91-1.293 2.75-1.025 2.75-1.025.546 1.37.204 2.385.1 2.637.64 0.69 1.03 1.585 1.03 2.675 0 3.843-2.336 4.687-4.564 4.935.359.309.678.92.678 1.856 0 1.336-.012 2.417-.012 2.75 0 .267.18.579.688.484C19.138 20.17 22 16.416 22 12c0-5.523-4.477-10-10-10z"/>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/ayush-singh-52938a28b/" target="_blank" class="social-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 8a6 6 0 0 0-6 6v7H6v-7a6 6 0 0 1 6-6h2a6 6 0 0 1 6 6v7h-4v-7c0-2.2-.8-4-4-4z"/>
+                        <rect width="4" height="12" x="2" y="9"/>
+                        <circle cx="4" cy="4" r="2"/>
+                    </svg>
+                </a>
+                <a href="mailto:ayush022105@gmail.com" class="social-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                </a>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+        <div class="hero-blob-1 animate-float-1" id="blob-1"></div>
+        <div class="hero-blob-2 animate-float-2" id="blob-2"></div>
+    </section>
 
-  <!-- SKILLS -->
-  <section id="skills">
-    <div class="container">
-      <div class="section-header">
-        <h2>Technical Arsenal</h2>
-        <div class="divider"></div>
-        <p>Tools and technologies I work with</p>
-      </div>
-
-      <div class="skills-grid" id="skills-grid"></div>
-    </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects" style="background-color: var(--color-bg-light);">
-    <div class="container">
-      <div class="section-header">
-        <h2>Featured Projects</h2>
-        <div class="divider"></div>
-        <p>Showcasing my practical applications of code</p>
-      </div>
-
-      <div class="filter-buttons">
-        <button class="active" data-filter="All">All</button>
-        <button data-filter="AI/ML">AI/ML</button>
-        <button data-filter="Web Dev">Web Dev</button>
-      </div>
-
-      <div class="project-grid" id="project-grid"></div>
-    </div>
-  </section>
-
-  <!-- ACHIEVEMENTS -->
-  <section id="achievements">
-    <div class="container">
-      <div class="section-header">
-        <h2>Achievements</h2>
-        <div class="divider"></div>
-        <p>Recognition and milestones</p>
-      </div>
-
-      <div class="timeline-container" id="timeline-container"></div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" style="background-color: var(--color-bg-light);">
-    <div class="container">
-      <div class="section-header">
-        <h2>Get In Touch</h2>
-        <div class="divider"></div>
-        <p>Let's build something amazing together</p>
-      </div>
-
-      <div class="contact-info-card">
-        <h3>Contact Information</h3>
-
-        <div>
-          <a href="mailto:ayush022105@gmail.com" class="contact-item" style="text-decoration:none;">
-            <div class="contact-icon-bg mail-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6z"/><path d="m3 7 9 7 9-7"/></svg>
+    <section id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>About Me</h2>
+                <div class="divider"></div>
+                <p>A quick overview of my philosophy, drive, and professional goals.</p>
             </div>
-            <div class="contact-item-details">
-              <p>Email</p>
-              <p>ayush022105@gmail.com</p>
+            <div class="about-grid">
+                <div class="about-card animate-fade-in-down" style="animation-delay: 0.2s;">
+                    <h3>My Story and Vision</h3>
+                    <p>I am driven by the belief that technology should be a tool for progress, inclusion, and solving significant social challenges. My journey spans from conceptualizing AI models to delivering full-stack web applications, always prioritizing efficiency, maintainability, and user experience. I seek opportunities where I can merge my expertise in machine learning with robust software development practices.</p>
+                    <p>I thrive in environments that challenge me to continuously learn and innovate. I aim to contribute to projects that have a measurable positive impact on the world, leveraging data-driven insights to build truly intelligent solutions.</p>
+                </div>
+                <div class="about-card animate-fade-in-down" style="animation-delay: 0.4s;">
+                    <h3>Quick Stats</h3>
+                    <div class="stat-grid">
+                        <div class="stat-item">
+                            <div>3+</div>
+                            <div>Projects Completed</div>
+                            <div>Across AI/ML & Web</div>
+                        </div>
+                        <div class="stat-item">
+                            <div>2</div>
+                            <div>Publications/Patents</div>
+                            <div>In AI and IoT domains</div>
+                        </div>
+                        <div class="stat-item">
+                            <div>Fresh</div>
+                            <div>Open to Work</div>
+                            <div>In coding and development</div>
+                        </div>
+                        <div class="stat-item">
+                            <div>10+</div>
+                            <div>Technologies Known</div>
+                            <div>From PyTorch to Tailwind</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </a>
-
-          <a href="tel:+918960271288" class="contact-item" style="text-decoration:none;">
-            <div class="contact-icon-bg phone-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2 2h-3.92a2 2 0 0 1-2-2c0-2.48 2.02-4.5 4.5-4.5h.42a.5.5 0 0 0 0-1H17a.5.5 0 0 0 0-1h-.5a.5.5 0 0 0-.5.5c0 1.95-1.55 3.5-3.5 3.5H9.5c-1.95 0-3.5-1.55-3.5-3.5a.5.5 0 0 0-1-.5c0 2.48 2.02 4.5 4.5 4.5h.5a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3.92a2 2 0 0 1 2-2z"/></svg>
-            </div>
-            <div class="contact-item-details">
-              <p>Phone</p>
-              <p>+91-8960271288</p>
-            </div>
-          </a>
-
-          <div class="contact-item">
-            <div class="contact-icon-bg location-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-            </div>
-            <div class="contact-item-details">
-              <p>Location</p>
-              <p>Gorakhpur, Uttar Pradesh, India</p>
-            </div>
-          </div>
         </div>
+    </section>
 
-        <div class="contact-social-links">
-          <p>Connect on Socials</p>
-          <a href="https://github.com/Ayush0221" target="_blank" rel="noreferrer" style="background-color: #333;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22s-4 0-7 2c0 0-4-3-4-7 0-7 6-8 6-8s-2-2-4-5c0 0 2-4 5-3 3 0 4 3 4 3s2 1 3 1c1 0 2-1 3-1 0 0 3-1 3-3 0 0-2 2-4 2s-3 1-3 1-1 3-1 3-1 0-1 0-1 0-1 0-1-3-1-3z"/></svg>
-          </a>
-          <a href="https://www.linkedin.com/in/ayush-singh-52938a28b/" target="_blank" rel="noreferrer" style="background-color: #0a66c2;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 0-6 6v7H6v-7a6 6 0 0 1 6-6h4z"/><rect x="2" y="3" width="4" height="4" rx="1"/></svg>
-          </a>
+    <section id="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2>My Technical Stack</h2>
+                <div class="divider"></div>
+                <p>The languages, frameworks, and tools I use to bring ideas to life.</p>
+            </div>
+            <div class="skills-grid" id="skills-grid">
+                </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>&copy; 2024 Ayush Kumar Singh. All rights reserved.</p>
-    <p style="margin-top:0.5rem;">Built with HTML, CSS, & Vanilla JavaScript</p>
-  </footer>
+    <section id="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Projects</h2>
+                <div class="divider"></div>
+                <p>Showcasing my most impactful work in artificial intelligence and web development.</p>
+            </div>
+            
+            <div class="filter-buttons">
+                <button data-filter="All" class="active">All</button>
+                <button data-filter="AI/ML">AI/ML</button>
+                <button data-filter="Web Dev">Web Dev</button>
+            </div>
 
-  <!-- Scripts -->
-  <script src="scripts.js"></script>
+            <div class="project-grid" id="project-grid">
+                </div>
+        </div>
+    </section>
+
+    <section id="achievements">
+        <div class="container">
+            <div class="section-header">
+                <h2>Certifications & Achievements</h2>
+                <div class="divider"></div>
+                <p>Key milestones that mark my growth and expertise.</p>
+            </div>
+            <div class="timeline-container" id="timeline-container">
+                </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Get In Touch</h2>
+                <div class="divider"></div>
+                <p>I am open to collaboration, new roles, and networking. Feel free to reach out!</p>
+            </div>
+            <div class="contact-info-card animate-fade-in-down" style="animation-delay: 0.2s;">
+                <h3>Contact Information</h3>
+                <div class="contact-item">
+                    <div class="contact-icon-bg mail-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                    </div>
+                    <div class="contact-item-details">
+                        <p>Email</p>
+                        <p>ayush022105@gmail.com</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon-bg phone-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2 2h-3a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2z"/><path d="M12 2h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/><path d="M4 16.92v3a2 2 0 0 0 2 2h3a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2z"/><path d="M12 12h8"/></svg>
+                    </div>
+                    <div class="contact-item-details">
+                        <p>Phone</p>
+                        <p>+91-8960271288</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon-bg location-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="3"/></svg>
+                    </div>
+                    <div class="contact-item-details">
+                        <p>Location</p>
+                        <p>Gorakhpur, Uttar Pradesh, India</p>
+                    </div>
+                </div>
+                <div class="contact-social-links">
+                    <p>Find me on social media:</p>
+                    <a href="https://github.com/Ayush0221" target="_blank" title="GitHub">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2C6.477 2 2 6.477 2 12c0 4.417 2.864 8.169 6.83 9.49.5.092.682-.217.682-.483 0-.237-.008-.867-.013-1.7-2.782.603-3.37-1.34-3.37-1.34-.454-1.157-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.004.07 1.531 1.032 1.531 1.032.892 1.528 2.341 1.087 2.91.83.091-.645.35-1.087.633-1.337-2.22-.253-4.555-1.11-4.555-4.943 0-1.09.39-1.984 1.03-2.675-.104-.252-.446-1.266.098-2.637 0 0 .84-.268 2.75 1.025A9.742 9.742 0 0 1 12 6.55c.85.006 1.7.12 2.5.352 1.91-1.293 2.75-1.025 2.75-1.025.546 1.37.204 2.385.1 2.637.64 0.69 1.03 1.585 1.03 2.675 0 3.843-2.336 4.687-4.564 4.935.359.309.678.92.678 1.856 0 1.336-.012 2.417-.012 2.75 0 .267.18.579.688.484C19.138 20.17 22 16.416 22 12c0-5.523-4.477-10-10-10z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/ayush-singh-52938a28b/" target="_blank" title="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 0-6 6v7H6v-7a6 6 0 0 1 6-6h2a6 6 0 0 1 6 6v7h-4v-7c0-2.2-.8-4-4-4z"/>
+                            <rect width="4" height="12" x="2" y="9"/>
+                            <circle cx="4" cy="4" r="2"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            &copy; 2025 Ayush Kumar Singh. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        feather.replace();
+    </script>
+    <script src="scripts.js"></script>
 </body>
 </html>
